@@ -8,4 +8,72 @@
     tools:context="com.people2meet.RegistrationActivity">
 
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sms_info"
+        android:id="@+id/sms_info"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:background="#ffffff" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sms_info"
+        android:layout_centerHorizontal="true"
+        android:background="#ffffff"
+        android:layout_marginTop="@dimen/abc_action_bar_content_inset_material"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone_no_entry_help"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal" />
+
+        <Spinner
+            android:id="@+id/country_spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.11">
+
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/isd"
+                android:gravity="right"
+                android:layout_weight="0.66" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:ems="10"
+                android:id="@+id/editText"
+                android:layout_weight="1" />
+
+            <Button
+                android:layout_width="37dp"
+                android:layout_height="wrap_content"
+                android:text="OK"
+                android:id="@+id/button"
+                android:layout_weight="0.24" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
 </RelativeLayout>
