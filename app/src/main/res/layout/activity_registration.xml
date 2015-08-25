@@ -5,6 +5,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:background="@drawable/gradient"
-    tools:context="com.people2meet.MainActivity">
+    tools:context="com.people2meet.RegistrationActivity">
+
 
 </RelativeLayout>

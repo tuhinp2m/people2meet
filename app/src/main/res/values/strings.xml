@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">People2Meet</string>
+    <string name="loading">Loading...</string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_activity_accept_term">Accept Terms and Condition</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="title_activity_main">MainActivity</string>
 </resources>
