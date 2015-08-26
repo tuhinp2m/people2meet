@@ -62,14 +62,14 @@
                 android:layout_height="wrap_content"
                 android:inputType="phone"
                 android:ems="10"
-                android:id="@+id/editText"
+                android:id="@+id/phone"
                 android:layout_weight="1" />
 
             <Button
                 android:layout_width="37dp"
                 android:layout_height="wrap_content"
                 android:text="OK"
-                android:id="@+id/button"
+                android:id="@+id/ok"
                 android:layout_weight="0.24" />
         </LinearLayout>
 

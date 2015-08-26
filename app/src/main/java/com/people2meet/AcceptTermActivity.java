@@ -15,11 +15,14 @@ public class AcceptTermActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accept_term);
 
+
+
         final Button button = (Button) findViewById(R.id.acceptTerm);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(AcceptTermActivity.this, RegistrationActivity.class);
                 startActivity(i);
+                finish();
             }
         });
     }

@@ -21,15 +21,20 @@ public class SplashScreen extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_load);
 
-        if (RegistrationUtils.isPhoneRegistered()){
+
+
+
+        if (RegistrationUtils.isPhoneRegistered(this)){
             UserDetails userDetails = AuthenticationUtils.login(RegistrationUtils.getRegistrationDetails());
 
             Intent i = new Intent(SplashScreen.this, MainActivity.class);
             startActivity(i);
+            finish();
 
         }else{
             Intent i = new Intent(SplashScreen.this, AcceptTermActivity.class);
             startActivity(i);
+            finish();
         }
 
         TelephonyInfo telephonyInfo = TelephonyInfo.getInstance(this);

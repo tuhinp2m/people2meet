@@ -10,14 +10,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Please accept our terms and condition"
+        android:text="@string/terms_and_conditions"
         android:id="@+id/tnc"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_above="@+id/acceptTerm" />
+        style="@style/Base.TextAppearance.AppCompat.Large" />
 
     <Button
         android:layout_width="wrap_content"
@@ -28,6 +28,21 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:background="@drawable/gradient"
-        android:layout_alignParentEnd="true" />
+        android:background="#0000ff"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentEnd="true"
+        style="@style/Base.TextAppearance.AppCompat.Large"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/terms_and_conditions_link"
+        android:id="@+id/link_tnc"
+        android:layout_below="@+id/tnc"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#0000ff"
+        android:textStyle="bold" />
 </RelativeLayout>

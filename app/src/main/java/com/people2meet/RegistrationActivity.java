@@ -1,5 +1,7 @@
 package com.people2meet;
 
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,14 +9,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 
-public class RegistrationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+public class RegistrationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
 
+    private String selected_country_isd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +61,11 @@ public class RegistrationActivity extends AppCompatActivity implements AdapterVi
         spinner.setSelection(currentCountryPosition);
 
         spinner.setOnItemSelectedListener(this);
+
+        Button ok = (Button) findViewById(R.id.ok);
+
+        ok.setOnClickListener(this);
+
     }
 
     @Override
@@ -93,11 +103,35 @@ public class RegistrationActivity extends AppCompatActivity implements AdapterVi
 
         isd.setFocusable(false);
 
+        selected_country_isd = countrySelected.getIsd();
+
     }
 
     public void onNothingSelected(AdapterView<?> parent) {
         TextView isd = (TextView)findViewById(R.id.isd);
 
         isd.setText("");
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        EditText phone = (EditText) findViewById(R.id.phone);
+
+        if (phone.getText() == null || phone.getText().equals("")){
+            Toast.makeText(getApplicationContext(),"Please enter valid phone number", Toast.LENGTH_SHORT);
+        }else {
+
+            String phoneNo = selected_country_isd + phone.getText();
+
+            Bundle params = new Bundle();
+            params.putString("phoneNo", phoneNo);
+
+            Intent i = new Intent(RegistrationActivity.this, RegistrationVerificationActivity.class);
+            i.putExtras(params);
+            startActivity(i);
+            finish();
+
+        }
     }
 }
